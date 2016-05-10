@@ -1,4 +1,4 @@
-# v-layout
+# stylus-vertical-layout
 
 Stylus mixin for vertical layouts with any number of fixed-height elements and an optional fluid element or gap. Employs absolute positioning, which, unlike calc-based grids, has been supported by Android for a while now.
 
