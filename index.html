@@ -1,11 +1,10 @@
 <style>
 article { width: 800px; margin: 10px auto; font: Arial; }
-section { width: 400px; height: 600px; position: relative; }
+section { width: 400px; height: 300px; position: relative; }
 section > *:nth-child(1) { background: red }
 section > *:nth-child(2) { background: blue }
 section > *:nth-child(3) { background: orange }
 section > *:nth-child(4) { background: green }
-code {display: block}
   
 .container1 > * {
   position: absolute;
@@ -29,6 +28,11 @@ code {display: block}
 </style>
 <article>
 <h1>stylus-vertical-layout</h1>
-<code>.container1 { v-layout: 10% 20% fluid 2em }</code>
+<pre>.container1 {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  v-layout: 10% 20% fluid 2em
+}</pre>
 <section class="container1"><div>10%</div><div>20%</div><div>fluid</div><div>2em</div></section>
 </article>
