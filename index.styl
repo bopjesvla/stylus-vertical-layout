@@ -43,7 +43,7 @@ v-layout()
 			height: h
 		belowHeight += h
 	
-	if fluidIndex
+	if fluidIndex isnt null
 		*:nth-child({fluidIndex + 1})
 			top: aboveHeight
 			bottom: belowHeight
