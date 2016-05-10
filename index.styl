@@ -1,44 +1,49 @@
-vertical-layout()
+v-layout()
+	if length(arguments) and arguments[0] is full-width
+		heights = slice(arguments, 1)
 		> *
 			position: absolute
-		
+			width: 100%
+	else
 		heights = slice(arguments)
-		
-		fluidIndex = index(heights, fluid)
-		gapIndex = index(heights, fluid-gap)
-		lastChildIndex = length(heights)
-		
-		topEnd = fluidIndex isnt null ? fluidIndex : gapIndex isnt null ? gapIndex : lastChildIndex
-		if gapIndex isnt null
-			lastChildIndex -= 1
-		
-		topStack = slice(heights, 0, +topEnd)
-		
-		// reverse since we're stacking from bottom to top
-		bottomStack = ()
-		for h in slice(heights, +topEnd + 1)
-			unshift(bottomStack, h)
-		
-		top2: gapIndex
-		bar: bottomStack
-		
-		for h, i in topStack
-			if i is 0
-				aboveHeight = topStack[0] * 0  // get the right unit
-			> *:nth-child({i + 1})
-				top: aboveHeight
-				height: h
-			aboveHeight += h
-		
-		for h, i in bottomStack
-			if i is 0
-				belowHeight = bottomStack[0] * 0  // get the right unit
-			> *:nth-child({lastChildIndex - i})
-				bottom: belowHeight
-				height: h
-			belowHeight += h
-		
-		if fluidIndex
-			*:nth-child({fluidIndex + 1})
-				top: aboveHeight
-				bottom: belowHeight
+		> *
+			position: absolute
+	
+	fluidIndex = index(heights, fluid)
+	gapIndex = index(heights, fluid-gap)
+	lastChildIndex = length(heights)
+	
+	topEnd = fluidIndex isnt null ? fluidIndex : gapIndex isnt null ? gapIndex : lastChildIndex
+	if gapIndex isnt null
+		lastChildIndex -= 1
+	
+	topStack = slice(heights, 0, +topEnd)
+	
+	// reverse since we're stacking from bottom to top
+	bottomStack = ()
+	for h in slice(heights, +topEnd + 1)
+		unshift(bottomStack, h)
+	
+	top2: gapIndex
+	bar: bottomStack
+	
+	for h, i in topStack
+		if i is 0
+			aboveHeight = topStack[0] * 0  // get the right unit
+		> *:nth-child({i + 1})
+			top: aboveHeight
+			height: h
+		aboveHeight += h
+	
+	for h, i in bottomStack
+		if i is 0
+			belowHeight = bottomStack[0] * 0  // get the right unit
+		> *:nth-child({lastChildIndex - i})
+			bottom: belowHeight
+			height: h
+		belowHeight += h
+	
+	if fluidIndex
+		*:nth-child({fluidIndex + 1})
+			top: aboveHeight
+			bottom: belowHeight
