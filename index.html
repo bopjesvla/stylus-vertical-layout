@@ -1,0 +1,34 @@
+<style>
+article { width: 800px; margin: 10px auto; font: Arial; }
+section { width: 400px; height: 600px }
+section > *:nth-child(1) { background: red }
+section > *:nth-child(2) { background: blue }
+section > *:nth-child(3) { background: orange }
+section > *:nth-child(4) { background: green }
+code {display: block}
+  
+.container1 > * {
+  position: absolute;
+}
+.container1 > *:nth-child(1) {
+  top: 0%;
+  height: 10%;
+}
+.container1 > *:nth-child(2) {
+  top: 10%;
+  height: 20%;
+}
+.container1 > *:nth-child(4) {
+  bottom: 0em;
+  height: 3em;
+}
+.container1 *:nth-child(3) {
+  top: 30%;
+  bottom: 3em;
+}
+</style>
+<article>
+<h1>stylus-vertical-layout</h1>
+<code>.container1 { v-layout: 10% 20% fluid 2em }</code>
+<section class="container1"><div>10%</div><div>20%</div><div>fluid</div><div>2em</div></section>
+</article>
