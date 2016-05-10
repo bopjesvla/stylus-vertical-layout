@@ -24,9 +24,6 @@ v-layout()
 	for h in slice(heights, +topEnd + 1)
 		unshift(bottomStack, h)
 	
-	top2: gapIndex
-	bar: bottomStack
-	
 	for h, i in topStack
 		if i is 0
 			aboveHeight = topStack[0] * 0  // get the right unit
