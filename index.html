@@ -1,6 +1,6 @@
 <style>
 article { width: 800px; margin: 10px auto; font: Arial; }
-section { width: 400px; height: 300px; position: relative; }
+section { width: 400px; height: 300px; position: relative; border: 1px solid; }
 section > *:nth-child(1) { background: red }
 section > *:nth-child(2) { background: blue }
 section > *:nth-child(3) { background: orange }
@@ -30,6 +30,7 @@ section > *:nth-child(4) { background: green }
 <h1>stylus-vertical-layout</h1>
 <pre>
 &lt;section class="container1">&lt;div>10 percent&lt;/div>&lt;div>20%&lt;/div>&lt;div>fluid&lt;/div>&lt;div>2em&lt;/div>&lt;/section>
+
 .container1 {
   width: 400px;
   height: 300px;
@@ -37,4 +38,28 @@ section > *:nth-child(4) { background: green }
   v-layout: 10% 20% fluid 2em
 }</pre>
 <section class="container1"><div>10 percent</div><div>20%</div><div>fluid</div><div>2em</div></section>
+<pre>
+.container2 {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  v-layout: full-width 80px 30px 10px fluid
+}</pre>
+<section class="container2"><div>80px</div><div>30px</div><div>10px</div><div>fluid</div></section>
+<pre>
+.container3 {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  v-layout: full-width 10% 30% fluid-gap 30px 60px
+}</pre>
+<section class="container3"><div>10%</div><div>30%</div><div>30px</div><div>60px</div></section>
+<pre>
+.container4 {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  v-layout: full-width fluid-gap 50px 80px 30px 10px
+}</pre>
+<section class="container4"><div>50px</div><div>80px</div><div>30px</div><div>10px</div><div>fluid</div></section>
 </article>
