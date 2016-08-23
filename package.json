@@ -1,13 +1,13 @@
 {
-    "name": "v-layout",
-    "description": "Stylus mixin for vertical layouts with both fluid and fixed-height elements",
-    "version": "1.0.1",
-    "homepage": "http://bopjesvla.github.io/v-layout",
-    "author": "Bob de Ruiter",
-    "main": "index.styl",
-    "repository": {
-        "type": "git",
-         "url": "https://github.com/bopjesvla/v-layout"
-    },
-    "license": "MIT"
+  "name": "v-layout",
+  "description": "Stylus mixin for vertical layouts with both fluid and fixed-height elements",
+  "version": "1.0.2",
+  "homepage": "http://bopjesvla.github.io/v-layout",
+  "author": "Bob de Ruiter",
+  "main": "index.styl",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bopjesvla/v-layout"
+  },
+  "license": "MIT"
 }
